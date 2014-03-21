@@ -47,6 +47,8 @@ sudo sh -c 'echo export HADOOP_COMMON_LIB_NATIVE_DIR=\$\{HADOOP_INSTALL\}/lib/na
 sudo sh -c 'echo export HADOOP_OPTS=\"-Djava.library.path=\$HADOOP_INSTALL/lib\" >> /home/hduser/.bashrc'
 sudo sh -c 'echo export HADOOP_CONF_DIR=$HADOOP_INSTALL/etc/hadoop'
 
+sudo -u hduser sed -i.bak '/^[ -z "$PS1" ]/ s/^/#/' /home/hduser/.bashrc
+
 # Modify JAVA_HOME
 cd /usr/local/hadoop/etc/hadoop
 sudo -u hduser sed -i.bak s=\${JAVA_HOME}=/usr/lib/jvm/jdk/=g hadoop-env.sh
