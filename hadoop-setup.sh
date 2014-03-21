@@ -1,4 +1,5 @@
 # Author : Luc Demierre
+# Refered in tutorial http://blog.demierre.me/configure-hadoop-2-3-0-cluster/
 
 cd ~
 sudo apt-get update
